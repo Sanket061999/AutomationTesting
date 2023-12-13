@@ -1,0 +1,13 @@
+{
+  "theme": "DARK",
+  "encoding": "utf-16",
+  "protocol": "HTTP",
+  "timelineEnabled": true,
+  "offlineMode": true,
+  "thumbnailforbase64":false,
+  "documentTitle": "Test1",
+  "reportName": "Test2",
+  "timeStampFormat": "dd-MM-yyyy hh:mm:ss",
+  "css": ".badge-primary{background-color:#FF0000}",
+  "js": "document.getElementsByClassName(\"logo\")[0].style.display='none';"
+}

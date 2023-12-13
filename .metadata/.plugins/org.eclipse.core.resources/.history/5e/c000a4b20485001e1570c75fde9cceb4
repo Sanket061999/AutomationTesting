@@ -1,0 +1,10 @@
+package com.environment;
+
+public class EnvironmentDetailDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,31 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DataDrivenDemo {
+
+	public static void main(String[] args) throws IOException {
+		
+		//It accept FileInputStream object
+		FileInputStream fis= new FileInputStream("C:\\Selenium_Practice\\ExcelDriven\\demo.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet=null;
+		
+		//Go to specific sheet
+		int sheets=workbook.getNumberOfSheets();
+		for(int i=0;i<sheets;i++) {
+			if(workbook.getSheetName(i).equalsIgnoreCase("testSheet")) {
+			 sheet=workbook.getSheetAt(i);
+			}
+			
+		}
+		//Indetifying the sheet column name
+		//After getting column the search for specific row
+		
+		
+
+	}
+
+}

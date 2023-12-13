@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-08T14:35:59 IST" name="Suite" finished-at="2023-12-08T14:36:39 IST" duration-ms="40550">
+    <groups>
+      <group name="ErrorHandling">
+        <method signature="ErrorValidationTest.loginErrorValidation()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" name="loginErrorValidation" class="com.sanket.pageobjects.test.ErrorValidationTest"/>
+      </group> <!-- ErrorHandling -->
+      <group name="Purchase">
+        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" name="submitOrder" class="com.sanket.pageobjects.test.SubmitOrderTest"/>
+      </group> <!-- Purchase -->
+    </groups>
+    <test started-at="2023-12-08T14:35:59 IST" name="Error Validation Test" finished-at="2023-12-08T14:36:22 IST" duration-ms="23219">
+      <class name="com.sanket.pageobjects.test.ErrorValidationTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:35:59 IST" name="launchApplication" finished-at="2023-12-08T14:36:08 IST" duration-ms="8981" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginErrorValidation()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:36:08 IST" name="loginErrorValidation" finished-at="2023-12-08T14:36:11 IST" duration-ms="3306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:36:11 IST" name="tearDown" finished-at="2023-12-08T14:36:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:36:11 IST" name="launchApplication" finished-at="2023-12-08T14:36:18 IST" duration-ms="6961" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="productErrorValidation()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:36:18 IST" name="productErrorValidation" finished-at="2023-12-08T14:36:22 IST" duration-ms="3815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sanket.pageobjects.test.ErrorValidationTest@20a7953c]" started-at="2023-12-08T14:36:22 IST" name="tearDown" finished-at="2023-12-08T14:36:22 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sanket.pageobjects.test.ErrorValidationTest -->
+    </test> <!-- Error Validation Test -->
+    <test started-at="2023-12-08T14:35:59 IST" name="Submit Order Test" finished-at="2023-12-08T14:36:39 IST" duration-ms="40550">
+      <class name="com.sanket.pageobjects.test.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:00 IST" name="launchApplication" finished-at="2023-12-08T14:36:08 IST" duration-ms="7638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:08 IST" name="submitOrder" data-provider="getData" finished-at="2023-12-08T14:36:18 IST" duration-ms="9938" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Sanket@937063, product=ZARA COAT 3, email=sanket333deshmukh@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:18 IST" name="tearDown" finished-at="2023-12-08T14:36:18 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:18 IST" name="launchApplication" finished-at="2023-12-08T14:36:24 IST" duration-ms="6471" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:24 IST" name="submitOrder" data-provider="getData" finished-at="2023-12-08T14:36:34 IST" duration-ms="10133" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Sanket@937063, product=ADIDAS ORIGINAL, email=deshmukhsanket33@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:34 IST" name="tearDown" finished-at="2023-12-08T14:36:34 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:34 IST" name="launchApplication" finished-at="2023-12-08T14:36:38 IST" duration-ms="3964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistory()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:38 IST" name="orderHistory" finished-at="2023-12-08T14:36:39 IST" depends-on-methods="com.sanket.pageobjects.test.SubmitOrderTest.submitOrder" duration-ms="1191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sanket.pageobjects.test.SubmitOrderTest@18371d89]" started-at="2023-12-08T14:36:39 IST" name="tearDown" finished-at="2023-12-08T14:36:39 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sanket.pageobjects.test.SubmitOrderTest -->
+    </test> <!-- Submit Order Test -->
+  </suite> <!-- Suite -->
+</testng-results>

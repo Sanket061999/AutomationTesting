@@ -1,0 +1,19 @@
+package com.dataprovider.excel;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class IntegrationWithDataProvider {
+	
+	@Test(dataProvider = "driveTest")
+	public void testCaseData(String fname,String lname,String id ) {
+		System.out.println(fname+" "+lname+" "+id);
+		
+	}
+	
+	@DataProvider(name="driveTest")
+	public Object[][] getData(){
+		//Object[][] data= {{"a1","a2","1"},{"b1","b2","2"},{"c1","c2","3"}};
+		return data;
+	}
+}

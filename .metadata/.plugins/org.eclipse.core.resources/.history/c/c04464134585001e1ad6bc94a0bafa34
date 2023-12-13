@@ -1,0 +1,49 @@
+package com.specializereport;
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class SpecializeReportDemo {
+
+	public static void main(String[] args) throws IOException {
+		ExtentReports extentreport = new ExtentReports();
+		ExtentSparkReporter extentSparkReporter_all = new ExtentSparkReporter("allTest.html");
+		ExtentSparkReporter extentSparkReporter_failed = new ExtentSparkReporter("failedTest.html");
+		ExtentSparkReporter extentSparkReporter_skipwarning = new ExtentSparkReporter("skipandwarningTest.html");
+		extentreport.attachReporter(extentSparkReporter_all, extentSparkReporter_failed,
+				extentSparkReporter_skipwarning);
+
+		extentreport.createTest("Test case 1", "Test cases 1 Desc").assignAuthor("Sanket").assignCategory("Smoke")
+				.assignDevice("Chrome 99").pass("This TC is passed");
+
+		extentreport.createTest("Test case 2", "Test cases 2 Desc").assignAuthor("Shiwam").assignCategory("Sanity")
+				.assignDevice("Edge 99").fail("This TC is failed");
+
+		extentreport.createTest("Test case 3", "Test cases 3 Desc").assignAuthor("Sanket").assignCategory("Smoke")
+				.assignDevice("Chrome 99").warning("This TC is warning");
+
+		extentreport.createTest("Test case 4", "Test cases 4 Desc").assignAuthor("Shiwam").assignCategory("Sanity")
+				.assignDevice("Edge 99").fail("This TC is failed");
+
+		extentreport.createTest("Test case 5", "Test cases 5 Desc").assignAuthor("Sanket").assignCategory("Smoke")
+				.assignDevice("Chrome 99").pass("This TC is passed");
+
+		extentreport.createTest("Test case 6", "Test cases 6 Desc").assignAuthor("Shiwam").assignCategory("Sanity")
+				.assignDevice("Edge 99").skip("This TC is failed");
+
+		Throwable throwable = new Throwable("This is throwable exception");
+		extentreport.createTest("Test case 3", "This is attaching SS testcase at log level").info("exception test")
+				.fail(throwable);
+
+		extentreport.flush();
+		Desktop.getDesktop().browse(new File("allTest.html").toURI());
+		Desktop.getDesktop().browse(new File("failedTest.html").toURI());
+		Desktop.getDesktop().browse(new File("skipandwarningTest.html").toURI());
+
+	}
+
+}

@@ -1,0 +1,49 @@
+package com.dataprovider.excel;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class IntegrationWithDataProvider {
+	
+	private java.lang.Object[][] data;
+
+	@Test(dataProvider = "driveTest")
+	public void testCaseData(String fname,String lname,String id ) {
+		System.out.println(fname+" "+lname+" "+id);
+		
+	}
+	
+	@DataProvider(name="driveTest")
+	public Object[][] getData() throws IOException{
+		FileInputStream fis = new FileInputStream("C://Selenium_Practice//ExcelDriven//demo.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet = null;
+
+		// Go to specific sheet
+		int sheets = workbook.getNumberOfSheets();
+		for (int i = 0; i < sheets; i++) {
+			if (workbook.getSheetName(i).equalsIgnoreCase("testCaseData")) {
+				sheet = workbook.getSheetAt(i);
+				
+				
+			}
+		}
+			
+		
+		//Object[][] data= {{"a1","a2","1"},{"b1","b2","2"},{"c1","c2","3"}};
+		return data;
+	}
+}

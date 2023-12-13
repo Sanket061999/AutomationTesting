@@ -1,0 +1,20 @@
+package com.sanket.pageobjects.test;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.sanket.pageobjects.ProductCatalogue;
+import com.sanket.pageobjects.testcomponent.BaseTest;
+
+public class ErrorValidation extends BaseTest {
+	
+	@Test
+	public void submitOrder() throws IOException,InterruptedException{
+		String productName="ZARA COAT 3";
+		landingPage.loginApplication("testUser@gmail.com", "testPassword");
+		Assert.assertEquals("Incorrect email or password.",landingPage.getErrorMessage());
+	}
+
+}

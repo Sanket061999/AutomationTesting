@@ -1,0 +1,51 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DataDrivenDemo {
+
+	public static void main(String[] args) throws IOException {
+		
+		//It accept FileInputStream object
+		FileInputStream fis= new FileInputStream("C:\\Selenium_Practice\\ExcelDriven\\demo.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet=null;
+		
+		//Go to specific sheet
+		int sheets=workbook.getNumberOfSheets();
+		for(int i=0;i<sheets;i++) {
+			if(workbook.getSheetName(i).equalsIgnoreCase("testSheet")) {
+			 sheet=workbook.getSheetAt(i);
+			//Indentifying the sheet column name by scanning the first row
+				Iterator<Row> rows=sheet.iterator();
+			
+				Row firstrow=rows.next();
+				Iterator<Cell> ce=firstrow.cellIterator();
+				int k=0;
+				int column=0;
+				while(ce.hasNext()) {
+					Cell cellValue=ce.next();
+					if(cellValue.getStringCellValue().equalsIgnoreCase("TestCases")) {
+						//	After getting column the search for specific row
+						column=k;
+					}
+					k++;
+				}
+				System.out.println(column);
+			}
+			
+		}
+		
+		
+	
+		
+		
+
+	}
+
+}

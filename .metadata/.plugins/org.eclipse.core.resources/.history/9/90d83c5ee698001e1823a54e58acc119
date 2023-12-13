@@ -1,0 +1,16 @@
+package com.dataprovider.excel;
+
+import org.testng.annotations.Test;
+
+public class IntegrationWithDataProvider {
+	
+	@Test
+	public void testCaseData() {
+		
+		
+	}
+	
+	@DataProvider(name="driveTest"){
+		Object[][]= {{"a1","a2"},{"b1","b2"},{"c1","c2"}};
+	}
+}

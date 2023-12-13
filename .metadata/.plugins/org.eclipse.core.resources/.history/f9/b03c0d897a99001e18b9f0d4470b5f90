@@ -1,0 +1,51 @@
+package com.dataprovider.excel;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class IntegrationWithDataProvider {
+	
+	private java.lang.Object[][] data;
+
+	@Test(dataProvider = "driveTest")
+	public void testCaseData(String fname,String lname,String id ) {
+		System.out.println(fname+" "+lname+" "+id);
+		
+	}
+	
+	@DataProvider(name="driveTest")
+	public Object[][] getData() throws IOException{
+		DataFormatter formatter= new DataFormatter();
+		FileInputStream fis = new FileInputStream("C://Selenium_Practice//ExcelDriven//demo.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet = workbook.getSheetAt(1);
+		int rowCount=sheet.getPhysicalNumberOfRows();
+		XSSFRow row=sheet.getRow(0);
+		int colCount=row.getLastCellNum();
+		
+		Object[][] data=new Object[rowCount-1][colCount];//because 1 row contains name of the column
+
+		for (int i=0;i<rowCount;i++)
+		{
+			row=sheet.getRow(i+1);
+			for(int j=0;j<colCount;j++) {
+				XSSFCell cellvalue=row.getCell(j);
+				String val=formatter.formatCellValue(cellvalue);
+				data[i][j]=val;
+			}
+		}
+		
+			
+		
+		//Object[][] data= {{"a1","a2","1"},{"b1","b2","2"},{"c1","c2","3"}};
+		return data;
+	}
+}

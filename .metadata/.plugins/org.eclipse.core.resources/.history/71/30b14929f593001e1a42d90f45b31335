@@ -1,0 +1,57 @@
+package com.sanket.pageobjects.test;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.sanket.pageobjects.CartPage;
+import com.sanket.pageobjects.CheckoutPage;
+import com.sanket.pageobjects.LandingPage;
+import com.sanket.pageobjects.ProductCatalogue;
+import com.sanket.pageobjects.testcomponent.BaseTest;
+
+
+public class SubmitOrderTest extends BaseTest {
+
+
+	
+	@Test
+	public void submitOrder() throws IOException {
+		String prodName="ZARA COAT 3";
+		ProductCatalogue productCatalog=landingPage.loginApplication("sanket333deshmukh@gmail.com","Sanket@937063");
+	
+	//	List<WebElement> products=productCatalog.getProductList(); //internally we are calling it in next step
+		productCatalog.addProductToCart(prodName);
+		CartPage cartpage=productCatalog.goToCartPage();
+		Boolean match=cartpage.verifyProductDisplay(prodName);
+		Assert.assertTrue(match);
+		CheckoutPage checkoutPage=cartpage.goToCheckout();
+		checkoutPage.selectCountry("india");
+//		ConfirmationPage confirmationPage=checkoutPage.submitOrder();
+//		String confirmMessage=confirmationPage.getConfirmationMessage();
+//		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+//		driver.close();
+//		
+		
+		WebElement Submit = driver.findElement(By.cssSelector("a.action__submit"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// Execute JavaScript click after waiting for the element to be clickable
+		js.executeScript("arguments[0].click();", Submit);
+
+		String confirmMessage=driver.findElement(By.cssSelector(".hero-primary")).getText();
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		//driver.close();
+	}
+	
+	@Test(dependsOnMethods= {"submitOrder"})
+	public void orderHistory() {
+		String prodName="ZARA COAT 3";
+		ProductCatalogue productCatalog=landingPage.loginApplication("sanket333deshmukh@gmail.com","Sanket@937063");
+	
+	}
+
+}

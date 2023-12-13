@@ -1,0 +1,16 @@
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DataDrivenDemo {
+
+	public static void main(String[] args) {
+		
+		//It accept FileInputStream object
+		FileInputStream fis= new FileInputStream(null);
+		XSSFWorkbook workbook = new XSSFWorkbook();
+		
+
+	}
+
+}

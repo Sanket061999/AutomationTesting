@@ -1,0 +1,19 @@
+package rahulshettyacademy.data;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+
+public class DataReader {
+	
+	public getJsonDataToMap() {
+		//Read json as String
+		String jsonContent=FileUtils.readFileToString(new File(System.getProperty("user.dir")+"\\src\\test\\java\\rahulshettyacademy\\data")))
+		
+		//String to HashMap jackson Databind
+
+
+
+	}
+
+}
