@@ -1,0 +1,21 @@
+package com.scrolling;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class JavaScriptExecutorDemo {
+	
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver();
+		WebDriver driver= new ChromeDriver();
+		driver.get(null);
+		//scrolling the page
+		
+		//scrolling the table
+		
+		
+	}
+
+}
